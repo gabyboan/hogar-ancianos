@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+import NavBar from "../components/NavBar.astro";
+import FloatingWhatsApp from "../components/FloatingWhatsApp.astro";
+import MobileStickyCTA from "../components/MobileStickyCTA.astro";
+
+const { title = "Hogar" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <NavBar />
+    <slot />
+    <FloatingWhatsApp />
+    <MobileStickyCTA />
+  </body>
+</html>
