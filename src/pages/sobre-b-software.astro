@@ -72,7 +72,7 @@ const principles = [
 ---
 
 <Layout {title} {description} {canonical} ogType="profile" navVariant="compact">
-  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
   <main class="about-page">
     <header class="about-hero">

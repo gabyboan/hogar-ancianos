@@ -9,9 +9,10 @@ const defaultItems = [
 ];
 
 const compactItems = [
-  { href: "/#proyectos", label: "Casos" },
   { href: "/#servicios", label: "Servicios" },
+  { href: "/#proyectos", label: "Proyectos" },
   { href: "/#metodo", label: "Proceso" },
+  { href: "/#cotizacion", label: "Cotización" },
   { href: "/sobre-b-software/", label: "Sobre" },
 ];
 
@@ -19,15 +20,15 @@ const { variant = "default" } = Astro.props;
 const compact = variant === "compact";
 const items = compact ? compactItems : defaultItems;
 const cta = compact
-  ? { href: "/#contacto", label: "Conversemos", external: false }
+  ? { href: "/#contacto", label: "Solicitar propuesta", external: false }
   : { href: "https://wa.me/5493434064408", label: "WhatsApp", external: true };
 ---
 
 <header class="site-header">
   <div class="nav-shell">
-    <a href="/" class="brand" aria-label="B-Software inicio">
+    <a href="/" class="brand">
       <span class="brand-mark">
-        <img src="/brand/logo-b.png" alt="" width="42" height="42" />
+        <img src="/brand/logo-b-96.webp" alt="" width="96" height="96" />
       </span>
       <span>
         <strong>B-Software</strong>
@@ -40,6 +41,11 @@ const cta = compact
         <a href={item.href}>{item.label}</a>
       ))}
     </nav>
+
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button type="button" class="language-option" data-language-option="es" aria-pressed="true" aria-label="Ver sitio en español">ES</button>
+      <button type="button" class="language-option" data-language-option="en" aria-pressed="false" aria-label="View site in English">EN</button>
+    </div>
 
     <a class="nav-cta" href={cta.href} target={cta.external ? "_blank" : undefined} rel={cta.external ? "noreferrer" : undefined}>{cta.label}</a>
 

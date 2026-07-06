@@ -5,11 +5,10 @@ const title = "Nido Inmobiliaria | Beta técnica de producto B-Software";
 const description =
   "Nido Inmobiliaria es una aplicación Flutter en beta técnica para explorar propiedades, validar autenticación y preparar distribución web y Android.";
 const canonical = "https://bsoftware.pages.dev/proyectos/nido-inmobiliaria/";
-const demoUrl = "https://gabyboan.github.io/inmobiliaria-app/";
-const repositoryUrl = "https://github.com/gabyboan/inmobiliaria-app";
+const demoUrl = "https://inmobiliaria-app.pages.dev/";
 
 const currentState = [
-  { state: "Disponible", title: "Web desplegada", text: "La beta Flutter Web se publica automáticamente en GitHub Pages." },
+  { state: "Disponible", title: "Web desplegada", text: "La beta Flutter Web está disponible públicamente en Cloudflare Pages." },
   { state: "En validación", title: "Autenticación Google", text: "La integración OAuth existe y requiere completar la validación del flujo real por plataforma." },
   { state: "En preparación", title: "APK Android beta", text: "La aplicación Android está configurada, pero todavía no se presenta como distribución pública terminada." },
   { state: "En evolución", title: "Flujo inmobiliario", text: "Catálogo, intención del usuario y filtros básicos forman una base que todavía debe probarse como recorrido completo." },
@@ -35,7 +34,7 @@ const decisions = [
   {
     number: "04",
     title: "Validación antes de publicar",
-    text: "GitHub Actions ejecuta análisis, pruebas y build antes de desplegar automáticamente la versión web.",
+    text: "El proyecto incorpora análisis, pruebas y build para validar cada versión antes de publicarla en la web.",
   },
 ];
 
@@ -48,8 +47,7 @@ const structuredData = {
       name: "Nido Inmobiliaria",
       description,
       url: canonical,
-      sameAs: [demoUrl, repositoryUrl],
-      codeRepository: repositoryUrl,
+      sameAs: [demoUrl],
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web; Android beta en preparación",
       softwareVersion: "0.1.0 beta técnica",
@@ -75,8 +73,18 @@ const structuredData = {
 };
 ---
 
-<Layout {title} {description} {canonical} ogType="article" navVariant="compact">
-  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<Layout
+  {title}
+  {description}
+  {canonical}
+  image="https://bsoftware.pages.dev/nido-inmobiliaria-beta.png"
+  imageAlt="Catálogo de demostración de Nido Inmobiliaria"
+  imageWidth={1440}
+  imageHeight={1000}
+  ogType="article"
+  navVariant="compact"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
   <main class="nido-page">
     <article>
@@ -91,7 +99,6 @@ const structuredData = {
             </p>
             <div class="nido-actions">
               <a href={demoUrl} target="_blank" rel="noreferrer">Abrir beta web ↗</a>
-              <a href={repositoryUrl} target="_blank" rel="noreferrer">Ver código ↗</a>
             </div>
           </div>
         </div>
@@ -167,8 +174,8 @@ const structuredData = {
             <div class="mockup-intro"><small>Explorar</small><strong>Encontrá un lugar para tu próxima etapa.</strong></div>
             <div class="mockup-filters"><span class="active">Todas</span><span>Alquiler</span><span>Venta</span></div>
             <div class="mockup-grid">
-              <article><div class="property-placeholder"><span>Disponible</span></div><small>Paraná · Entre Ríos</small><strong>Departamento luminoso</strong><p>2 dormitorios · 68 m²</p></article>
-              <article><div class="property-placeholder alternate"><span>En venta</span></div><small>Paraná · Entre Ríos</small><strong>Casa con patio</strong><p>3 dormitorios · 140 m²</p></article>
+              <article><div class="property-placeholder"><span>Alquiler</span></div><small>Ciudad del Río · Distrito Centro</small><strong>Departamento luminoso</strong><b>US$ 720 / mes</b><p>1 dormitorio · 58 m²</p></article>
+              <article><div class="property-placeholder alternate"><span>En venta</span></div><small>Villa Serena · Zona Parque</small><strong>Casa con patio</strong><b>US$ 168.000</b><p>4 dormitorios · 184 m²</p></article>
             </div>
           </div>
           <div class="mockup-nav"><span class="active">Explorar</span><span>Favoritos</span><span>Alertas</span><span>Cuenta</span></div>
@@ -222,7 +229,7 @@ const structuredData = {
   .state-section { color: #f4f4f1; background: var(--nido-dark); }.state-inner { max-width: 1180px; margin: 0 auto; padding: 100px 20px; display: grid; grid-template-columns: .78fr 1.22fr; gap: 86px; }.state-heading .section-number { color: #aec0b3; }.state-heading > p:last-child { margin-top: 22px; color: rgb(255 255 255 / .62); line-height: 1.75; }.state-list { border-top: 1px solid rgb(255 255 255 / .17); }.state-list article { display: grid; grid-template-columns: 42px .72fr 1.28fr; gap: 20px; border-bottom: 1px solid rgb(255 255 255 / .17); padding: 24px 0; }.state-list article > span { color: #aec0b3; font-size: .7rem; font-weight: 900; }.state-list small { color: #aec0b3; font-size: .64rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }.state-list h3 { margin-top: 6px; font-size: 1.1rem; }.state-list article > p { color: rgb(255 255 255 / .65); line-height: 1.65; }
   .decisions-heading { display: grid; grid-template-columns: .32fr .68fr; gap: 48px; }.decisions-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #c7c5be; }.decisions-grid article { min-height: 270px; padding: 22px 22px 22px 0; }.decisions-grid article + article { border-left: 1px solid #c7c5be; padding-left: 22px; }.decisions-grid span { color: var(--nido); font-size: .7rem; font-weight: 900; }.decisions-grid h3 { margin-top: 46px; font-size: 1.2rem; }.decisions-grid p { margin-top: 13px; color: #62665f; line-height: 1.65; }
   .product-view { max-width: 1260px; margin: 20px auto 0; display: grid; grid-template-columns: .72fr 1.28fr; overflow: hidden; border: 1px solid #c8cbc7; border-radius: 10px; background: #eef1ee; }.product-view-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: 44px; }.product-view-copy > p:last-child { margin-top: 22px; color: #62665f; line-height: 1.8; }
-  .nido-mockup { min-height: 650px; margin: 22px; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; border: 1px solid #bdc5bf; border-radius: 12px; background: #fafbf9; box-shadow: 0 20px 44px rgb(27 36 30 / .1); }.mockup-topbar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d7dbd8; padding: 14px 18px; }.mockup-brand, .mockup-actions, .mockup-filters, .mockup-nav { display: flex; align-items: center; gap: 10px; }.mockup-brand > span { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 9px; color: #fff; background: var(--nido-dark); font-weight: 900; }.mockup-actions span { color: #70766f; font-size: .66rem; font-weight: 850; }.mockup-content { padding: 28px; }.mockup-intro small { color: var(--nido); font-weight: 900; text-transform: uppercase; }.mockup-intro strong { max-width: 510px; display: block; margin-top: 7px; font-size: 1.8rem; letter-spacing: -.03em; }.mockup-filters { margin-top: 22px; }.mockup-filters span { border: 1px solid #cbd0cb; border-radius: 999px; padding: 7px 10px; color: #697069; font-size: .68rem; font-weight: 850; }.mockup-filters .active { border-color: var(--nido); color: #fff; background: var(--nido); }.mockup-grid { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }.mockup-grid article { overflow: hidden; border: 1px solid #d4d8d4; border-radius: 9px; background: #fff; }.property-placeholder { min-height: 180px; position: relative; background-color: #dfe6e1; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='180' viewBox='0 0 240 180'%3E%3Cpath d='M48 142V75l72-49 72 49v67M83 142V95h74v47M105 142v-30h30v30' fill='none' stroke='%23566a5d' stroke-width='2'/%3E%3C/svg%3E"); background-position: center; background-repeat: no-repeat; }.property-placeholder.alternate { background-color: #e7e2da; }.property-placeholder span { position: absolute; top: 12px; left: 12px; border-radius: 999px; padding: 6px 8px; color: #fff; background: var(--nido-dark); font-size: .62rem; font-weight: 850; }.mockup-grid article > small, .mockup-grid article > strong, .mockup-grid article > p { display: block; margin-inline: 14px; }.mockup-grid article > small { margin-top: 14px; color: #7b817b; }.mockup-grid article > strong { margin-top: 7px; }.mockup-grid article > p { margin-top: 6px; margin-bottom: 16px; color: #7b817b; font-size: .72rem; }.mockup-nav { justify-content: space-around; border-top: 1px solid #d7dbd8; padding: 14px; }.mockup-nav span { color: #858b85; font-size: .66rem; font-weight: 850; }.mockup-nav .active { color: var(--nido-dark); }
+  .nido-mockup { min-height: 650px; margin: 22px; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; border: 1px solid #bdc5bf; border-radius: 12px; background: #fafbf9; box-shadow: 0 20px 44px rgb(27 36 30 / .1); }.mockup-topbar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d7dbd8; padding: 14px 18px; }.mockup-brand, .mockup-actions, .mockup-filters, .mockup-nav { display: flex; align-items: center; gap: 10px; }.mockup-brand > span { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 9px; color: #fff; background: var(--nido-dark); font-weight: 900; }.mockup-actions span { color: #70766f; font-size: .66rem; font-weight: 850; }.mockup-content { padding: 28px; }.mockup-intro small { color: var(--nido); font-weight: 900; text-transform: uppercase; }.mockup-intro strong { max-width: 510px; display: block; margin-top: 7px; font-size: 1.8rem; letter-spacing: -.03em; }.mockup-filters { margin-top: 22px; }.mockup-filters span { border: 1px solid #cbd0cb; border-radius: 999px; padding: 7px 10px; color: #697069; font-size: .68rem; font-weight: 850; }.mockup-filters .active { border-color: var(--nido); color: #fff; background: var(--nido); }.mockup-grid { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }.mockup-grid article { overflow: hidden; border: 1px solid #d4d8d4; border-radius: 9px; background: #fff; }.property-placeholder { min-height: 180px; position: relative; background-color: #dfe6e1; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='180' viewBox='0 0 240 180'%3E%3Cpath d='M48 142V75l72-49 72 49v67M83 142V95h74v47M105 142v-30h30v30' fill='none' stroke='%23566a5d' stroke-width='2'/%3E%3C/svg%3E"); background-position: center; background-repeat: no-repeat; }.property-placeholder.alternate { background-color: #e7e2da; }.property-placeholder span { position: absolute; top: 12px; left: 12px; border-radius: 999px; padding: 6px 8px; color: #fff; background: var(--nido-dark); font-size: .62rem; font-weight: 850; }.mockup-grid article > small, .mockup-grid article > strong, .mockup-grid article > b, .mockup-grid article > p { display: block; margin-inline: 14px; }.mockup-grid article > small { margin-top: 14px; color: #7b817b; }.mockup-grid article > strong { margin-top: 7px; }.mockup-grid article > b { margin-top: 8px; color: var(--nido-dark); font-size: 1.08rem; }.mockup-grid article > p { margin-top: 6px; margin-bottom: 16px; color: #7b817b; font-size: .72rem; }.mockup-nav { justify-content: space-around; border-top: 1px solid #d7dbd8; padding: 14px; }.mockup-nav span { color: #858b85; font-size: .66rem; font-weight: 850; }.mockup-nav .active { color: var(--nido-dark); }
   .learning-list { border-top: 1px solid #c7c5be; }.learning-list article { display: grid; grid-template-columns: .35fr .65fr; gap: 24px; border-bottom: 1px solid #c7c5be; padding: 24px 0; }.learning-list span { color: var(--nido); font-weight: 900; }.learning-list p { color: #62665f; line-height: 1.7; }
   .nido-cta { margin-bottom: 70px; display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: end; border-radius: 10px; padding-top: 64px; padding-bottom: 64px; color: #fff; background: var(--nido-dark); }.nido-cta .nido-label { color: #aec0b3; }.nido-cta .button { background: #fff; color: var(--nido-dark); }
   @media (max-width: 900px) {
